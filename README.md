@@ -197,13 +197,13 @@ struct node* deletenodes(struct node* root, int data)
     }
     else
     {
-        //1 child
+        //No child
         if (root->left==NULL && root->right==NULL)
         {
             free(root);
             root=NULL;
         }
-        //2 children
+        //1 children
         else if (root->left==NULL)
         {
             struct node* temp=root;
@@ -216,6 +216,7 @@ struct node* deletenodes(struct node* root, int data)
             root = root->left;
             free(temp);
         }
+        //2 child
         else
         {
             struct node* temp = findmin(root->right);
